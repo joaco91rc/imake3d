@@ -1,10 +1,17 @@
 import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Navbar from './components/navegacion/Navbar'
+import Incio from './components/paginas/Inicio'
+import Nosotros from './components/paginas/Nosotros'
+import Shop from './components/paginas/Shop'
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+     {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +24,12 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> 
+  */}
+    
+    <Router>
+    <Navbar/>
+    </Router>
     </div>
   );
 }
