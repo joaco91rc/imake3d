@@ -6,6 +6,15 @@ import Navbar from './components/navegacion/Navbar'
 import Incio from './components/paginas/Inicio'
 import Nosotros from './components/paginas/Nosotros'
 import Shop from './components/paginas/Shop'
+import ItemListContainer from './components/ItemListContainer';
+
+
+const styles ={
+  carrito: {
+    display:'flex',
+    justifyContent:'space-between',
+  },
+}
 
 
 function App() {
@@ -28,7 +37,11 @@ function App() {
   */}
     
     <Router>
-    <Navbar/>
+    <Navbar style={styles.carrito}>
+     
+    </Navbar>
+    <ItemListContainer/>     
+    
     </Router>
     </div>
   );
