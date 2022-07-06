@@ -1,0 +1,10 @@
+.counter{
+    width:300px;
+    height: 100px;
+    background-image: linear-gradient( 109.6deg,  rgba(45,116,213,1) 11.2%, rgba(121,137,212,1) 91.2% );
+    margin: auto;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+}
