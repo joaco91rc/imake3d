@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ItemListContainer = () => {
+const ItemListContainer = ({titulo}) => {
   return (
-    <h1>Bienvenido a la Web de Impresiones 3D</h1>
+    <h1>{titulo}</h1>
   )
 }
 

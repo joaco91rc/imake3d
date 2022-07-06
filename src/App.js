@@ -40,7 +40,7 @@ function App() {
     <Navbar style={styles.carrito}>
      
     </Navbar>
-    <ItemListContainer/>     
+    <ItemListContainer titulo="Bienvenido al Sitio Web de Impresiones 3D(pasado como props)"/>     
     
     </Router>
     </div>
