@@ -7,6 +7,9 @@ import Incio from './components/paginas/Inicio'
 import Nosotros from './components/paginas/Nosotros'
 import Shop from './components/paginas/Shop'
 import ItemListContainer from './components/ItemListContainer';
+import ItemList from './components/ItemList/ItemList';
+import ProductListContainer from './components/ProductListContainer.jsx';
+import CardItem from './components/CardItem';
 
 
 const styles ={
@@ -43,7 +46,13 @@ function App() {
     <ItemListContainer titulo="Bienvenido al Sitio Web de Impresiones 3D(pasado como props)"/>     
     
     </Router>
+     
+
+        <ProductListContainer  CardItem/>
+          
+        
     </div>
+    
   );
 }
 
