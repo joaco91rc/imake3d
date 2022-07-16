@@ -1,0 +1,13 @@
+.Productos {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    justify-content: space-around;
+    
+    
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+}

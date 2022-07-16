@@ -1,12 +1,14 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import CartWidget from '../CartWidget'
+import './navbar.css'
 
 
 const styles ={
   carrito: {
     display:'flex',
-    justifyContent:'space-between',
+    justifyContent:'flex-end',
+    paddingLeft:'500px'
   },
 }
 
@@ -22,7 +24,7 @@ const navbar = () => {
       <span className="navbar-toggler-icon"></span>
     </button>
     <div  className="collapse navbar-collapse" id="navbarNav">
-      <ul className="navbar-nav" >
+      <ul className="navbar-nav mx-auto" >
         <li className="nav-item">
           <Link className="nav-link active" to='/'>Inicio</Link>
         </li>
@@ -35,11 +37,14 @@ const navbar = () => {
         <li className="nav-item">
           <Link className="nav-link" to='/Galeria'>Galeria</Link>
         </li>
-        <CartWidget  style={styles.carrito}/>
+        
       </ul>
+      
     </div>
   </div>
+  <CartWidget  style={styles.carrito}/>
 </nav>
+
     </div>
   )
 }

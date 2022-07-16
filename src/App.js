@@ -6,10 +6,11 @@ import Navbar from './components/navegacion/Navbar'
 import Incio from './components/paginas/Inicio'
 import Nosotros from './components/paginas/Nosotros'
 import Shop from './components/paginas/Shop'
-import ItemListContainer from './components/ItemListContainer';
-import ItemList from './components/ItemList/ItemList';
-import ProductListContainer from './components/ProductListContainer.jsx';
-import CardItem from './components/CardItem';
+import ItemListContainer from './components/container/ItemListContainer';
+import ItemCount from './components/ItemCount/ItemCount';
+
+
+
 
 
 const styles ={
@@ -20,40 +21,33 @@ const styles ={
 }
 
 
+
+
 function App() {
+const onAdd = (cantidad)=> {
+  const mensaje= alert(`Compraste ${cantidad} unidades`)}
+
   return (
-    <div className="App">
-     {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> 
-  */}
+   <>
     
     <Router>
     <Navbar style={styles.carrito}>
      
     </Navbar>
-    <ItemListContainer titulo="Bienvenido al Sitio Web de Impresiones 3D(pasado como props)"/>     
+       
     
     </Router>
      
-
-        <ProductListContainer  CardItem/>
-          
+    <ItemListContainer saludo="Bienvenidos al sitio Web de Impresiones 3D"/>
+    <ItemCount inicial={1} stock={10} onAdd={onAdd}/>
+    
+    
+   
         
-    </div>
+    </>
+    
     
   );
-}
 
+  };
 export default App;
