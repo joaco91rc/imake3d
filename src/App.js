@@ -34,14 +34,15 @@ const onAdd = (cantidad)=> {
     
     <Router>
     <Navbar style={styles.carrito}/>
-     
+     <div className='tituloWeb'>
+     <h1> Bienvenidos al Shop de IMake3D Impresiones 3D</h1>
+     </div>
     <Routes>
     <Route path='/' element={<ItemListContainer/>}/>
     <Route path='/categorias/:categoria' element={<ItemListContainer/>}/>
     <Route path='/item/:id' element={<ItemDetailContainer/>}/>
 
     </Routes>
-       
     
     </Router>
      

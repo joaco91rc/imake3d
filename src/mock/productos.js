@@ -27,13 +27,13 @@ export const productos = [
     {
      nombre: "Joker estilo Funko Pop",
      categoria: "UniversoDC",
-     precio: 60,
+     precio: 2345,
      descripcion: "Figura en 3d Guason estilo Funko",
      img: "https://res.cloudinary.com/joaco91rc/image/upload/v1658238263/imake3d/DC/dc4_yavcqh.jpg",
      id: "4"
     },
     {
-     nombre: "Plataorma 9 3/4 Harry Potter",
+     nombre: "Plataorma 9 3/4 ",
      categoria: "HarryPotter",
      precio: 3930,
      descripcion: "Anden 9 3/4 Harry Ron y Hermione",
@@ -91,7 +91,7 @@ export const productos = [
     {
      nombre: "Groot",
      categoria: "Marvel",
-     precio: 37,
+     precio: 3700,
      descripcion: "Baby Groot en 3D",
      img: "https://res.cloudinary.com/joaco91rc/image/upload/v1658238279/imake3d/Marvel/marvel1_frxg6g.jpg",
      id: "12"
