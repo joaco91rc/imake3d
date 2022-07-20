@@ -1,8 +1,35 @@
+.container-fluid header nav ul li a {
+    color: orange;
+  }
+
 .nav-link{
     font-size: 40px;
+    color: goldenrod;
 }
 .navbar{
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
+    background-image: linear-gradient( 109.6deg,  rgba(31,179,237,1) 11.2%, rgba(17,106,197,1) 91.1% );
+    background-image: linear-gradient( 296.2deg,  rgba(73,73,73,1) 36.1%, rgba(16,15,15,1) 93.6% );
+    color: goldenrod;
+    
 }
+
+.nav-item  .nav-link{
+    color: goldenrod;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+.navbar-nav{
+    color: goldenrod;
+    
+}
+.container-fluid  ul li a {
+    color: orange;
+  }
+  .logo img{
+    color: goldenrod;
+  }

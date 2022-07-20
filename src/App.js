@@ -4,7 +4,7 @@ import './App.css';
 import {BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom'
 import Navbar from './components/navegacion/Navbar'
 import Incio from './components/paginas/Inicio'
-import Nosotros from './components/paginas/Nosotros'
+import Categorias from './components/paginas/categorias'
 import Shop from './components/paginas/Shop'
 import ItemListContainer from './components/container/ItemListContainer';
 import ItemCount from './components/ItemCount/ItemCount';
@@ -18,6 +18,7 @@ const styles ={
   carrito: {
     display:'flex',
     justifyContent:'space-between',
+    color:'goldenRod'
   },
 }
 
@@ -37,16 +38,16 @@ const onAdd = (cantidad)=> {
     <Routes>
     <Route path='/' element={<ItemListContainer/>}/>
     <Route path='/categorias/:categoria' element={<ItemListContainer/>}/>
-    <Route path='/item/:id' element={<ItemListContainer/>}/>
+    <Route path='/item/:id' element={<ItemDetailContainer/>}/>
 
     </Routes>
        
     
     </Router>
      
-    <ItemListContainer saludo="Bienvenidos al sitio Web de Impresiones 3D"/>
-    <ItemDetailContainer/>
-    <ItemCount inicial={1} stock={10} onAdd={onAdd}/>
+    
+    
+    
     
     
    

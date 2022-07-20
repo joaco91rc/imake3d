@@ -4,22 +4,17 @@
     justify-content: space-evenly;
     align-content: center;
     
-    width: 100%;
-    margin-top: 60px;
+  
+    margin-top: 80px;
   }
   
-  .img-detail-cont {
-    height: 600px;
-    width: 700px;
-    
-  }
+  
   
   .img-detail {
-    height: 100%;
-    width: 100%;
+    
     object-fit: cover;
     border-radius: 15px;
-    box-shadow: 1px 1px 10px rgb(34, 34, 34);
+    box-shadow: 1px 1px 10px goldenrod;
   }
   
   .text-container {
@@ -27,11 +22,69 @@
     display: flex;
       flex-direction: column;
       justify-content: space-between;
-    align-items: center;
+    align-items:baseline;
+    border-radius: 10px;
+    border: 1px solid goldenrod;
+    background-image: radial-gradient( circle farthest-corner at -4% -12.9%,  rgba(74,98,110,1) 0.3%, rgba(30,33,48,1) 90.2% );
+    color: whitesmoke;
+    
   }
   
   .titulo-container{
     width: 100%;
     display: flex;
       flex-direction: column;
+      color: goldenrod;
+      justify-content: first baseline;
+      align-items:baseline;
+  }
+  .descripcion-container{
+   flex-direction: row-reverse;
+   color:whitesmoke;
+   font-weight: bold;
+   padding: 20px;
+  }
+  .precio-container{
+    display: flex;
+    justify-content: first baseline;
+    flex-direction: row;
+    padding-top: 30px;
+    
+    
+  }
+
+  .envio-container{
+    background-image: radial-gradient( circle farthest-corner at -4% -12.9%,  rgba(74,98,110,1) 0.3%, rgba(30,33,48,1) 90.2% );
+    width: 30%;
+    display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    align-items:baseline;
+    border-radius: 10px;
+    border: 1px solid goldenrod;
+  }
+
+  h6 {
+   color: greenyellow; 
+   font-weight: 700;
+   font-size: 20px;
+   padding-left: 10px;
+   display: flex;
+  }
+  p {
+    color: white;
+    font-size: 16px;
+  }
+
+  .icono-camion{
+    color: greenyellow;
+    height: 18px;
+    display: flex;
+  }
+  .envio-camion{
+    display: flex;
+    flex-direction: row;
+  }
+  .envio-camion2{
+    display: flex;
   }

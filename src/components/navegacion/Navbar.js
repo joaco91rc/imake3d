@@ -8,7 +8,9 @@ const styles ={
   carrito: {
     display:'flex',
     justifyContent:'flex-end',
-    paddingLeft:'500px'
+    paddingRigth:'20px',
+    marginRigth:'50px',
+    
   },
 }
 
@@ -18,7 +20,9 @@ const navbar = () => {
         <nav  className="navbar navbar-expand-lg navbar-dark bg-primary">
   <div className="container-fluid" >
     <Link to='/'>
-        <img src='./logoNavbar.png' width='50'/>
+       <div className='logo'>
+        <img src='./logoNavbar.png' width='50' />
+        </div>
       </Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -29,7 +33,7 @@ const navbar = () => {
           <Link className="nav-link active" to='/'>Inicio</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to='/Nosotros'>Nosotros</Link>
+          <Link className="nav-link" to='/categorias'>Categorias</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to='/Shop'>Shop</Link>

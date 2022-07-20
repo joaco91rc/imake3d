@@ -1,9 +1,14 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 const styles ={
   carrito: {
     display:'flex',
-    justifyContent:'space-between',
+    paddingRigth:'20px',
+    marginRigth:'50px',
+    color:'goldenRod',
+    height:'24px'
   },
 }
 
@@ -11,7 +16,7 @@ const styles ={
 const CartWidget = () => {
   return (
     <div >
-        <img  src='./CartIcon.png' width='50'/>
+        <FontAwesomeIcon className="icono-camion" style={styles.carrito} icon={solid('shopping-cart') } />
     </div>
   )
 }
