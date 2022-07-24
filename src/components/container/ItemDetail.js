@@ -6,13 +6,17 @@ import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import
 
 import { useState } from "react";
 import {Link, NavLink} from 'react-router-dom'
+import { CartContext } from "../context/CartContext";
 
 
 const ItemDetail = ({item}) => {
     const {nombre,categoria,img,precio,id,descripcion} = item
     const [cantidad,setCantidad] = useState(0) 
+    const {addToCart} = useContext(CartContext)
+    
      const onAdd = (cantidad) => {
     setCantidad(cantidad)
+    addToCart(item,cantidad)
   }
   
     return (

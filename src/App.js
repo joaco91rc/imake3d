@@ -9,6 +9,7 @@ import Shop from './components/paginas/Shop'
 import ItemListContainer from './components/container/ItemListContainer';
 import ItemCount from './components/ItemCount/ItemCount';
 import ItemDetailContainer from './components/container/ItemDetailContainer';
+import Provider from './components/context/CartContext';
 
 
 
@@ -31,7 +32,7 @@ const onAdd = (cantidad)=> {
 
   return (
    <>
-    
+    <Provider>
     <Router>
     <Navbar style={styles.carrito}/>
      <div className='tituloWeb'>
@@ -46,7 +47,7 @@ const onAdd = (cantidad)=> {
     
     </Router>
      
-    
+    </Provider>
     
     
     
