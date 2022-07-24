@@ -4,10 +4,15 @@ import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
 
+import { useState } from "react";
+import {Link, NavLink} from 'react-router-dom'
+
+
 const ItemDetail = ({item}) => {
     const {nombre,categoria,img,precio,id,descripcion} = item
-  const onAdd = (cantidad) => {
-    console.log("Seleccionaste", cantidad,"items")
+    const [cantidad,setCantidad] = useState(0) 
+     const onAdd = (cantidad) => {
+    setCantidad(cantidad)
   }
   
     return (
@@ -65,7 +70,9 @@ const ItemDetail = ({item}) => {
             </div>
 
             <div className="contador">
-            <ItemCount inicial={1} stock={10} onAdd={onAdd}/>
+
+            {cantidad === 0  ?( <ItemCount inicial={1} stock={10} onAdd={onAdd}/>)
+            :(<Link to='/cart'> Ir al Carrito </Link>)}
             </div>
             </div>
             
