@@ -19,11 +19,11 @@ const navbar = () => {
     <div >
         <nav  className="navbar navbar-expand-lg navbar-dark bg-primary">
   <div className="container-fluid" >
-    <Link to='/'>
+    <NavLink to='/'>
        <div className='logo'>
-        <img src='./logoNavbar.png' width='50' />
+        <img src='./logoNavbar.png' width='50' alt='logo' />
         </div>
-      </Link>
+      </NavLink>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -32,15 +32,23 @@ const navbar = () => {
         <li className="nav-item">
           <Link className="nav-link active" to='/'>Inicio</Link>
         </li>
+        
         <li className="nav-item">
-          <Link className="nav-link" to='/categorias'>Categorias</Link>
+          <Link className="nav-link" to='/categorias/StarWars'>Star Wars</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to='/Shop'>Shop</Link>
+          <Link className="nav-link" to='/categorias/Pokemon'>Pokemon</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to='/Galeria'>Galeria</Link>
+          <Link className="nav-link" to='/categorias/Marvel'>Marvel</Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link" to='/categorias/UniversoDC'>DC Universe</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to='/categorias/HarryPotter'>Harry Potter</Link>
+        </li>
+        
         
       </ul>
       

@@ -2,9 +2,9 @@ import ItemCount from "../ItemCount/ItemCount";
 import "./itemDetail.css"
 import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {Link, NavLink} from 'react-router-dom'
 import { CartContext } from "../context/CartContext";
 

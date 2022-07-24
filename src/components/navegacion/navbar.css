@@ -21,6 +21,8 @@
     color: goldenrod;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     
+    padding: 3px;
+    margin-left: 50px;
 }
 
 .navbar-nav{

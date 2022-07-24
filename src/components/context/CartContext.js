@@ -1,6 +1,7 @@
 //1 creo el contexto 
 import { createContext } from "react";
 import * as React from 'react';
+import { useState } from "react";
 
 export const CartContext = createContext()
 //2 Creo el componente como capa de abstraccion y llamamos a los children para poder ver nuevamente los componentes 

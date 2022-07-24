@@ -1,7 +1,7 @@
-import logo from './logo.svg';
+
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom'
+import {BrowserRouter as Router,  Route, Routes} from 'react-router-dom'
 import Navbar from './components/navegacion/Navbar'
 import Incio from './components/paginas/Inicio'
 import Categorias from './components/paginas/categorias'
