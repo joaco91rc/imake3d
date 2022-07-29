@@ -1,0 +1,49 @@
+.boton{
+    color:goldenrod;
+    font-weight: 600;
+    margin-left: 30px;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,22,131,1) 0%, rgba(97,170,231,1) 90% );
+    border-radius: 15px solid white;
+    height: fit-content;
+    
+    
+}
+.detalleCarrito {
+color: white;
+font-weight: 900;
+
+}
+
+h3 {
+    color: green;
+    font-weight: bolder;
+}
+
+.detalleCarritoPrecio {
+    color:goldenrod
+}
+
+.titulo {
+    color: goldenrod;
+}
+
+.link{
+    color: white;
+    font-weight: bold;
+}
+.resumenCompra{
+    width: fit-content;
+    
+    
+}
+.detalleCompra{
+    display: flex;
+    align-items: center;
+    
+
+}
+.eliminar {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
