@@ -10,7 +10,7 @@ import ItemListContainer from './components/container/ItemListContainer';
 import ItemCount from './components/ItemCount/ItemCount';
 import ItemDetailContainer from './components/container/ItemDetailContainer';
 import Provider from './components/context/CartContext';
-
+import Cart from './components/paginas/cart';
 
 
 
@@ -34,15 +34,16 @@ const onAdd = (cantidad)=> {
    <>
     <Provider>
     <Router>
+      
     <Navbar style={styles.carrito}/>
      <div className='tituloWeb'>
-     <h1> Bienvenidos al Shop de IMake3D Impresiones 3D</h1>
+     <h1> Shop de IMake3D Impresiones 3D</h1>
      </div>
     <Routes>
     <Route path='/' element={<ItemListContainer/>}/>
     <Route path='/categorias/:categoria' element={<ItemListContainer/>}/>
     <Route path='/item/:id' element={<ItemDetailContainer/>}/>
-
+    <Route path="/cart" element={<Cart />} />
     </Routes>
     
     </Router>

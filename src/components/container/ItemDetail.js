@@ -76,7 +76,10 @@ const ItemDetail = ({item}) => {
             <div className="contador">
 
             {cantidad === 0  ?( <ItemCount inicial={1} stock={10} onAdd={onAdd}/>)
-            :(<Link to='/cart'> Ir al Carrito </Link>)}
+            : <div>
+            <Link to='/cart'><button className="btn btn-primary">Ir al Carrito</button> </Link>
+             <Link to='/'><button className="btn btn-primary">Seguir Comprando</button> </Link>
+             </div>}
             </div>
             </div>
             

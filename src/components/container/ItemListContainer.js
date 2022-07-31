@@ -3,6 +3,8 @@ import Loader from "../../Loader/Loader.js";
 import {useParams} from "react-router-dom";
 import ItemList from "./ItemList";
 import { productos } from "../../mock/productos";
+import {collection,  getDocs,getFirestore,query,where } from "firebase/firestore"
+
 
 
 const ItemListContainer=() =>{
@@ -10,7 +12,7 @@ const ItemListContainer=() =>{
   const [cargando, setCargando] = useState(true);
   const { categoria } = useParams();
 
-  const traerProductos = () => {
+   /* const traerProductos = () => {
     return new Promise(resolve => {
       setCargando(true);
       setTimeout(() => {
@@ -19,19 +21,46 @@ const ItemListContainer=() =>{
         );
       }, 2000);
     });
-  };
+  };  */
+  /* const traerProductos = async () => {
+    
+    const db = getFirestore();
+        const itemsCollection = collection(db, "items")
+        await getDocs(itemsCollection).then((snapshot)=>{
+          const dataExtraida= snapshot.docs.map((doc) => doc.data())
+          setItems(dataExtraida)
+          console.log(dataExtraida)
+        })
+  } */
+
   useEffect(
     () => {
-      traerProductos().then(res => {
-        setItems(res);
-        setCargando(false);
-      });
-    },
-    [categoria]
+       /* traerProductos().then(res => {
+        setItems(res); */
+       
+    /*   }); 
+        
+    }, */
+    const querydb = getFirestore()
+    const queryCollection = collection(querydb, 'items')
+    if (categoria){
+    const queryFilter = query(queryCollection, where('categoria','==', categoria))
+    getDocs(queryFilter)
+    .then(res => setItems( res.docs.map(producto => ({id:producto.id, ...producto.data()}))))}
+    else {
+      getDocs(queryCollection)
+    .then(res => setItems( res.docs.map(producto => ({id:producto.id, ...producto.data()}))))
+
+    }
+
+   }, [categoria]
   );
 
-  return (<>{cargando ? <Loader /> : <ItemList items={items} />}</>);
-
+  return (
+    <div>
+    <ItemList items={items} />;
+    </div>
+  )
 }  
 
 

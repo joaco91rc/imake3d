@@ -88,3 +88,12 @@
   .envio-camion2{
     display: flex;
   }
+
+  .btn{
+    
+    color:goldenrod;
+    font-weight: 600;
+    
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,22,131,1) 0%, rgba(97,170,231,1) 90% );
+    
+  }
