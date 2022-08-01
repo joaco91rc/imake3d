@@ -11,6 +11,7 @@ import ItemCount from './components/ItemCount/ItemCount';
 import ItemDetailContainer from './components/container/ItemDetailContainer';
 import Provider from './components/context/CartContext';
 import Cart from './components/paginas/cart';
+import Footer from './components/footer/Footer';
 
 
 
@@ -44,9 +45,11 @@ const onAdd = (cantidad)=> {
     <Route path='/categorias/:categoria' element={<ItemListContainer/>}/>
     <Route path='/item/:id' element={<ItemDetailContainer/>}/>
     <Route path="/cart" element={<Cart />} />
-    </Routes>
     
+    </Routes>
+    <Footer/>
     </Router>
+    
      
     </Provider>
     

@@ -1,0 +1,33 @@
+.footer {
+    background-image: radial-gradient( circle farthest-corner at -4% -12.9%,  rgba(74,98,110,1) 0.3%, rgba(30,33,48,1) 90.2% );
+    margin-top: 50px;
+    border-radius: 5px;
+    border: 2px solid goldenrod;
+    display: grid;
+    grid-template-columns: 20% 50% 10% 10% 10%;
+    height: 100px
+}
+
+.textoFooter {
+    
+    grid-column: 1/2;
+    
+}
+
+.contenedorRedes {
+    display: grid;
+}
+.contenedorLogoIG{
+    
+    
+    grid-column: 3/4;
+}
+.contenedorLogoFB{
+    color: blue;
+    grid-column: 4/5;
+}
+
+.contenedorLogoWSP{
+    
+    grid-column: 5/6;
+}

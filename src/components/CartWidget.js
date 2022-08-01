@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom'
 const styles ={
   carrito: {
     display:'flex',
-    paddingRigth:'20px',
-    marginRigth:'50px',
+    justifyContent: 'flexEnd',
+    
     color:'goldenRod',
-    height:'24px'
+    height:'30px'
   },
 }
 
