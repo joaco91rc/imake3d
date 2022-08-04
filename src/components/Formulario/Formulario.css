@@ -2,6 +2,8 @@
     border-radius: 15px;
     border: 1px solid goldenrod;
     width: 100%;
+    padding: 3px;
+    align-content: center;
 }
 .inputDiv label {
     display: flex;
@@ -11,7 +13,10 @@
 
 input{
     margin-left: 10px;
+    justify-content: center;
 }
 .form-flex{
-   
+   display: flex;
+   flex-direction: column;
+   justify-items: center;
 }

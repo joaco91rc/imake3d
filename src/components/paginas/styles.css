@@ -72,14 +72,23 @@ h3 {
   }
   
 .divForm {
-    display:flex;
-    
+   
+    justify-content: center;
+    align-items: center;
+    width: 500px;
     
 }
 h2{
     color: goldenrod;
     font-weight: 700;
 }
-.contenedorEmitirCompra{
-    grid-column: 2/3;
+.datosUsuario{
+    
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+.resumenCarrito {
+    display: flex;
+    justify-content: center;
 }

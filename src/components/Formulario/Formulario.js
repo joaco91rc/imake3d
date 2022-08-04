@@ -5,8 +5,8 @@ import './Formulario.css'
 const Formulario = () => {
 
     const [form,setForm] = useState({})
-    const handleChange = e =>{
-        setForm({...form, [e.target.name]:e.target.value})
+    const handleChange = (e) =>{
+        setForm({...form, [e.target.id]:e.target.value,})
     }
 
 
@@ -14,10 +14,11 @@ const Formulario = () => {
     <div className="container-form">
                 <form className="form-flex">
                   <div className="inputDiv">
-                <label htmlFor="nombre"> Nombre</label>
-                <input 
+                <label className="labelForm" htmlFor="nombre"> Nombre</label>
+                <input className="inputsForm"
                 type ="text"
                 id="nombre"
+                value={form.nombre}
                 onChange={handleChange}
                 /> 
                 </div>
@@ -26,6 +27,7 @@ const Formulario = () => {
                 <input 
                 type ="text"
                 id="apellido"
+                value={form.apellido}
                 onChange={handleChange}/> 
                 </div>
                 <div className="inputDiv">
@@ -33,6 +35,7 @@ const Formulario = () => {
                 <input 
                 type ="email"
                 id="email"
+                value={form.email}
                 onChange={handleChange}/>
                 </div>
                 <div className="inputDiv">
@@ -40,6 +43,7 @@ const Formulario = () => {
                 <input 
                 type ="text"
                 id="telefono"
+                value={form.telefono}
                 onChange={handleChange}/> 
                 </div>
                 <div className="inputDiv">
@@ -47,6 +51,7 @@ const Formulario = () => {
                 <input 
                 type ="text"
                 id="localidad"
+                value={form.localidad}
                 onChange={handleChange}/> 
                 </div>
                 <div className="inputDiv">
@@ -54,6 +59,7 @@ const Formulario = () => {
                 <input 
                 type ="text"
                 id="direccion"
+                value={form.direccion}
                 onChange={handleChange}/> 
                 </div>
                 <div className="inputDiv">
@@ -61,10 +67,13 @@ const Formulario = () => {
                 <input 
                 type ="text"
                 id="codigoPostal"
+                value={form.codigoPostal}
                 onChange={handleChange}/> 
                 </div>
+                
                 </form>
                 </div>
+                
   )
 }
 
