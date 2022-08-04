@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+
 import iconoIG from './iconos/iconoIG.png'
 import iconoFB from './iconos/iconoFB.png'
 import iconoWSP from './iconos/iconoWSP.png'

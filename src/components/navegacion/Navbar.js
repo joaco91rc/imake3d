@@ -7,12 +7,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './navbar.css'
 
 
-const styles ={
-  carrito: {
-   
-    
-  },
-}
+
 
 const navbar = () => {
   return (

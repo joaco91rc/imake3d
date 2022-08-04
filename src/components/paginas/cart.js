@@ -1,13 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext'
 import './styles.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
+import Formulario from '../Formulario/Formulario';
+
 
 const Cart = () => {
     const { cart, borrarUnItem, vaciarCarrito,suma } = useContext(CartContext);
+    function obtenerFecha(){
+        let date = new Date();
+    let fecha = String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + date.getFullYear();
+        return fecha
+        
+    
+    }
+    
+    
     const order = {
         comprador: {
             nombre:'Joaquin Alvarez',
@@ -15,7 +26,9 @@ const Cart = () => {
             telefono: '2215568971',
             direccion: '25 entre 63 y 64 Nro 1256',
             items:cart.map(producto => ({id:producto.id,nombre:producto.nombre,precio:producto.precio,cantidad:producto.cantidad})),
-            total: suma
+            total: suma,
+            fecha: obtenerFecha()
+            
 
         }
         
@@ -24,18 +37,21 @@ const Cart = () => {
         const db = getFirestore()
         const orderCollection = collection(db,'orders')   
         addDoc(orderCollection,order)
-        .then(({id})=> console.log(id))
-        alert('Compra Aprobada. En los proximos 3 dias hábiles recibira un mail con el numero de seguimiento de su envio. Gracias por su compra. IMake3D')
+        .then( ({id})=> alert('Compra Aprobada.Numero de orden de compra :'+ id + '. En los proximos 3 dias hábiles recibira un mail con el numero de seguimiento de su envio. Gracias por su compra. IMake3D'))
+        vaciarCarrito()
        }
    
     if (cart.length === 0) {
         return (
             <h2 className='titulo'>
-                Aún no hay productos, volver al <Link className='link' to="/">Home</Link>
+                Aún no hay productos, volver al <Link className='link' to="/">Catalogo</Link>
             </h2>
         );
     }
+    
     return (
+        <>
+        <div className='padre'>
         <div className='resumenCompra'>
             {cart.map((prod) => (
                 <div className='detalleCompra'
@@ -57,13 +73,28 @@ const Cart = () => {
                         <div className='botonEliminar'>
                       <button className='btn iconoEliminar btn-primary' onClick={() => borrarUnItem(prod.id)}><FontAwesomeIcon className='iconoBorrar' icon={solid('trash') } /></button>
                       </div>
+                   
                 </div>
+                
+                
             ))}
+                
             <button className='btn btn-primary botonVaciar' onClick={vaciarCarrito}>Vaciar Carrito</button>
             <Link to='/'><button className="btn btn-primary">Seguir Comprando</button> </Link>
             <h3 className='detalleTotal'>Total:$ {suma} </h3>
             <Link to='/'><button className='btn btn-primary' onClick={emitirCompra}>Comprar</button></Link>
+            
+
+            
         </div>
+        <div className='contenedorEmitirCompra'>
+                    <div className='datosUsuario'>
+                    <h2>Formulario de Compra</h2>    
+                    <div className='divForm'><Formulario/></div>
+                    </div> 
+            </div>
+            </div>
+        </>
     );
 };
 

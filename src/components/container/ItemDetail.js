@@ -5,12 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 import { useState, useContext } from "react";
-import {Link, NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import { CartContext } from "../context/CartContext";
 
 
 const ItemDetail = ({item}) => {
-    const {nombre,categoria,img,precio,id,descripcion} = item
+    const {nombre,img,precio,descripcion} = item
     const [cantidad,setCantidad] = useState(0) 
     const {addToCart} = useContext(CartContext)
     
