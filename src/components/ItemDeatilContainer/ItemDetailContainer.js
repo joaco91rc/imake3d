@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import Loader from "../Loader/Loader"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import * as React from 'react';
-import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, getDocs, collection, snapshotEqual } from "firebase/firestore";
 import '../Loader/Loader.css'
 
 const ItemDetailContainer = () => {
@@ -13,16 +13,26 @@ const ItemDetailContainer = () => {
   const [cargando, setCargando] = useState(true)
   const {id} =useParams()
 
- 
+ const traerProductos = async () =>{
+    const db = getFirestore();
+    await getDocs(collection(db,'items')).then((snapshot)=>{
+    snapshot.docs.forEach((datos) =>{
+        setItem(...item,datos.data())
+    })
+ })
+}
+
+
   useEffect(()=>{
    
       
-      const querydb = getFirestore()
+     /*  const querydb = getFirestore()
       setCargando(true)
       const queryDoc = doc (querydb,'items',id)
       getDoc(queryDoc)
       .then(res => setItem({id:res.id, ...res.data()}))
-      setCargando(false)
+      setCargando(false) */
+      traerProductos();
     
   },[])
   
