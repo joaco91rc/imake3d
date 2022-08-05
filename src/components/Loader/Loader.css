@@ -1,9 +1,4 @@
-.loader-container{
-    display: flex;
-    justify-content: center;
-      align-items: center;
-    margin-top: 150px;
-  }
+
   
   .lds-heart {
       display: inline-block;
@@ -12,6 +7,7 @@
       height: 80px;
       transform: rotate(45deg);
       transform-origin: 40px 40px;
+      color: goldenrod;
     }
     .lds-heart div {
       top: 32px;

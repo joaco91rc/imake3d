@@ -10,6 +10,7 @@ import ItemDetailContainer from './components/ItemDeatilContainer/ItemDetailCont
 import Provider from './components/Context/CartContext';
 import Cart from './paginas/cart'
 import Footer from './components/Footer/Footer'
+import Loader from './components/Loader/Loader';
 
 
 
@@ -37,6 +38,7 @@ function App() {
      <div className='tituloWeb'>
      <h1> Shop de IMake3D Impresiones 3D</h1>
      </div>
+     
     <Routes>
     <Route path='/' element={<ItemListContainer/>}/>
     <Route path='/categorias/:categoria' element={<ItemListContainer/>}/>
