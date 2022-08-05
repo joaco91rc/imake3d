@@ -4,12 +4,12 @@ import './App.css';
 import {BrowserRouter as Router,  Route, Routes} from 'react-router-dom'
 import Navbar from './components/navegacion/Navbar'
 
-import ItemListContainer from './components/container/ItemListContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
-import ItemDetailContainer from './components/container/ItemDetailContainer';
-import Provider from './components/context/CartContext';
-import Cart from './components/paginas/cart';
-import Footer from './components/footer/Footer';
+import ItemDetailContainer from './components/ItemDeatilContainer/ItemDetailContainer';
+import Provider from './components/Context/CartContext';
+import Cart from './paginas/cart'
+import Footer from './components/Footer/Footer'
 
 
 

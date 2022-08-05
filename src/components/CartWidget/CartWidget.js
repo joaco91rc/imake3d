@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
-import { CartContext } from './context/CartContext'
+import { CartContext } from '../Context/CartContext'
 import { Link } from 'react-router-dom'
 
 const styles ={

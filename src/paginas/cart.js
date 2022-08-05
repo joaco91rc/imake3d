@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../context/CartContext'
+import { CartContext } from '../components/Context/CartContext'
 import './styles.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
-import Formulario from '../Formulario/Formulario';
+import Formulario from '../components/Formulario/Formulario';
 
 
 const Cart = () => {

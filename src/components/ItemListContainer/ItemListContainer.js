@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loader from "../../Loader/Loader.js";
 import {useParams} from "react-router-dom";
-import ItemList from "./ItemList";
+import ItemList from "../ItemList/ItemList";
 
 import {collection,  getDocs,getFirestore,query,where } from "firebase/firestore"
 

@@ -6,7 +6,7 @@ import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 import { useState, useContext } from "react";
 import {Link} from 'react-router-dom'
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../Context/CartContext";
 
 
 const ItemDetail = ({item}) => {
