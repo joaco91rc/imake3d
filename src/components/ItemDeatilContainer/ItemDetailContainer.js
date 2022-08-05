@@ -13,14 +13,7 @@ const ItemDetailContainer = () => {
   const [cargando, setCargando] = useState(true)
   const {id} =useParams()
 
- const traerProductos = async () =>{
-    const db = getFirestore();
-    await getDocs(collection(db,'items')).then((snapshot)=>{
-    snapshot.docs.forEach((datos) =>{
-        setItem(...item,datos.data())
-    })
- })
-}
+ 
 
 
   useEffect(()=>{
