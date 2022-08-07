@@ -16,11 +16,11 @@ const ItemListContainer=() =>{
   const traerProductos = async () =>{
     const db = getFirestore();
     await getDocs(collection(db,'items')).then((snapshot)=>{
-    snapshot.docs.forEach((datos) =>{
-        setItems(...items,datos.data())
+    const dataExtraida = snapshot.docs.map((datos) => datos.data())
+        setItems(dataExtraida)
     })
- })
-} 
+ }
+
 
 
 
@@ -42,8 +42,9 @@ const ItemListContainer=() =>{
     .then(res => setItems( res.docs.map(producto => ({id:producto.id, ...producto.data()}))))
     
     
-    }
+    } 
     setTimeout(()=>{setCargando(false)},2000)
+    
    }, [categoria]
   );
 

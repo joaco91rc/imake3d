@@ -19,13 +19,13 @@ const ItemDetailContainer = () => {
   useEffect(()=>{
    
       
-     /*  const querydb = getFirestore()
+      const querydb = getFirestore()
       setCargando(true)
       const queryDoc = doc (querydb,'items',id)
       getDoc(queryDoc)
       .then(res => setItem({id:res.id, ...res.data()}))
-      setCargando(false) */
-      traerProductos();
+      setCargando(false)
+      
     
   },[])
   
