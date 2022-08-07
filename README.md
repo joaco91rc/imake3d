@@ -69,6 +69,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-### Simulacion carrito de Compras
+### Simulation of the Purchase Process in an e-commerce web application
 
 This link shows us how to simulate the process of a purchase in our E-commerce Web application https://im.ge/i/FWCl6M
