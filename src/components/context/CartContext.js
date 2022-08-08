@@ -1,6 +1,7 @@
 //1 creo el contexto 
 import { createContext, useEffect, useState } from "react";
 import * as React from 'react';
+import { Link } from "react-router-dom";
 
 
 export const CartContext = createContext()
@@ -52,6 +53,7 @@ const borrarUnItem = (id) => {
 
 const vaciarCarrito = () => {
     setCart([]);
+    
 };
 
     return(<CartContext.Provider value={{cart, addToCart, borrarUnItem,vaciarCarrito,suma}}>

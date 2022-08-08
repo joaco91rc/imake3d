@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import Formulario from '../components/Formulario/Formulario';
+import ItemListContainer from '../components/ItemListContainer/ItemListContainer';
+
 
 
 const Cart = () => {
@@ -17,14 +19,24 @@ const Cart = () => {
         
     
     }
+    const [nombre,setNombre] = useState('')
+    const [apellido,setApellido] = useState('')
+    const [email,setEmail] = useState('')
+    const [telefono,setTelefono] = useState('')
+    const [localidad,setLocalidad] = useState('')
+    const [direccion,setDireccion] = useState('')
+    const [codigoPostal,setCodigoPostal] = useState('')
     
     
     const order = {
         comprador: {
-            nombre:'Joaquin Alvarez',
-            email: 'joaquinalvarez@gmail.com',
-            telefono: '2215568971',
-            direccion: '25 entre 63 y 64 Nro 1256',
+            nombre:nombre,
+            apellido: apellido,
+            email: email,
+            telefono: telefono,
+            localidad:localidad,
+            direccion: direccion,
+            codigoPostal:codigoPostal,
             items:cart.map(producto => ({id:producto.id,nombre:producto.nombre,precio:producto.precio,cantidad:producto.cantidad})),
             total: suma,
             fecha: obtenerFecha()
@@ -34,20 +46,33 @@ const Cart = () => {
         
     }
     const emitirCompra = () => {
+        if (nombre ==='' || apellido ===''|| email ==='' || telefono ==='' || localidad ==='' || direccion ===''|| codigoPostal ==='' ){
+            alert('Complete todos los campos para poder procesar la compra')
+        }
+        else { 
         const db = getFirestore()
         const orderCollection = collection(db,'orders')   
         addDoc(orderCollection,order)
         .then( ({id})=> alert('Compra Aprobada.Numero de orden de compra :'+ id + '. En los proximos 3 dias hábiles recibira un mail con el numero de seguimiento de su envio. Gracias por su compra. IMake3D'))
         vaciarCarrito()
+        
+        
+
+             }
        }
    
     if (cart.length === 0) {
         return (
             <h2 className='titulo'>
-                Aún no hay productos, volver al <Link className='link' to="/">Catalogo</Link>
+                Carrito Vacio.Volver al<Link className='link' to="/">Catalogo</Link>
             </h2>
         );
     }
+
+    
+    
+
+    
     
     return (
         <>
@@ -81,11 +106,12 @@ const Cart = () => {
                 
                 
             ))}
-                
+                 
             <button className='btn btn-primary botonVaciar' onClick={vaciarCarrito}>Vaciar Carrito</button>
             <Link to='/'><button className="btn btn-primary">Seguir Comprando</button> </Link>
             <h3 className='detalleTotal'>Total:$ {suma} </h3>
-            <Link to='/'><button className='btn btn-primary' onClick={emitirCompra}>Comprar</button></Link>
+            
+            <button    className='btn btn-primary' onClick={emitirCompra}>Comprar</button>
             
 
             
@@ -93,7 +119,86 @@ const Cart = () => {
         <div className='contenedorEmitirCompra'>
                     <div className='datosUsuario'>
                     <h2>Formulario de Compra</h2>    
-                    <div className='divForm'><Formulario/></div>
+                    <div className='divForm'>
+                    <div className="container-form">    
+                    <form >
+                  <div className="inputDiv">
+                <label className="labelForm" htmlFor="nombre"> Nombre</label>
+                <input className="inputsForm"
+                type ="text"
+                name="nombre"
+                placeholder="Escribe tu Nombre"
+                value={nombre} 
+                onChange={ev =>setNombre(ev.target.value) }
+                /> 
+                
+                </div>
+                <div className="inputDiv">
+                <label htmlFor="nombre">Apellido</label>
+                <input 
+                type ="text"
+                name="apellido"
+                placeholder="Escribe tu Apellido"
+                value={apellido} 
+                onChange={ev =>setApellido(ev.target.value)}/> 
+                
+                </div>
+                <div className="inputDiv">
+                <label htmlFor="email"> Email</label>
+                <input 
+                type ="email"
+                name="email"
+                placeholder="ejemplo@mail.com"
+                value={email} 
+                onChange={ev =>setEmail(ev.target.value)}/>
+               
+                </div>
+                <div className="inputDiv">
+                <label htmlFor="telefono"> Telefono</label>
+                <input 
+                type ="text"
+                name="telefono"
+                placeholder="Numero de Telefono"
+                value={telefono} 
+                onChange={ev =>setTelefono(ev.target.value)}/>
+                 
+                </div>
+                <div className="inputDiv">
+                <label htmlFor="localidad"> Localidad</label>
+                <input 
+                type ="text"
+                name="localidad"
+                placeholder='Localidad'
+                value={localidad} 
+                onChange={ev =>setLocalidad(ev.target.value)}/> 
+               
+                </div>
+                <div className="inputDiv">
+                <label htmlFor="direccion"> Direccion</label>
+                <input 
+                type ="text"
+                name="direccion"
+                placeholder="Escribe Direccion de Envio"
+                value={direccion} 
+                onChange={ev =>setDireccion(ev.target.value)}/> 
+                
+                </div>
+                <div className="inputDiv">
+                <label htmlFor="codigoPostal"> Codigo Postal</label>
+                <input 
+                type ="text"
+                name="codigoPostal"
+                placeholder="Numero Codigo Postal de tu localidad"
+                value={codigoPostal} 
+                onChange={ev =>setCodigoPostal(ev.target.value)}/> 
+                
+                </div>
+                
+                
+                
+                </form>
+                </div>
+                    </div>
                     </div> 
             </div>
             </div>
