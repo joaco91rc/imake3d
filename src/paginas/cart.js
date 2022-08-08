@@ -90,12 +90,12 @@ const Cart = () => {
 
             
         </div>
-        {/* <div className='contenedorEmitirCompra'>
+        <div className='contenedorEmitirCompra'>
                     <div className='datosUsuario'>
                     <h2>Formulario de Compra</h2>    
                     <div className='divForm'><Formulario/></div>
                     </div> 
-            </div> */}
+            </div>
             </div>
         </>
     );
