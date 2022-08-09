@@ -68,7 +68,9 @@ const Cart = () => {
                 </h2>:null }
                 
 
-                {compraRealizada ? <p className='text_Compra' > `Compra Aprobada.Numero de orden de compra : {idUser}. En los proximos 3 dias hábiles recibira un mail con el numero de seguimiento de su envio. Gracias por su compra. IMake3D `</p> : null }
+                {compraRealizada ? <div className='compraAprobada'><h2>Compra Aprobada!.</h2><p className='text_Compra' > Numero de orden de compra :
+                 {idUser}. En los proximos 3 dias hábiles recibira un mail con el numero de seguimiento de su envio. 
+                 Gracias por su compra. IMake3D</p> </div>: null }
             </div>
 
         );
