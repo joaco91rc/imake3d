@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense, lazy} from "react";
 import Loader from "../Loader/Loader"
 import {useParams} from "react-router-dom";
-import ItemList from "../ItemList/ItemList";
 import '../Loader/Loader.css'
+import "./itemListContainer.css"
 
 import {collection,  getDocs,getFirestore,query,where } from "firebase/firestore"
 
+const ItemList = lazy(() => import ('../ItemList/ItemList'))
 
 
 const ItemListContainer=() =>{
@@ -22,8 +23,6 @@ const ItemListContainer=() =>{
  }
 
 
-
-
   useEffect(
     () => {
     
@@ -34,23 +33,46 @@ const ItemListContainer=() =>{
     if (categoria){
     const queryFilter = query(queryCollection, where('categoria','==', categoria)
     )
-    setTimeout(()=>{setCargando(false)},2000)
+  
     getDocs(queryFilter)
-    .then(res => setItems( res.docs.map(producto => ({id:producto.id, ...producto.data()}))))}
+
+    .then(res => {
+      setItems( res.docs.map(producto => ({id:producto.id, ...producto.data()})))
+      setCargando(false)
+    })}
+
     else {
       getDocs(queryCollection)
-    .then(res => setItems( res.docs.map(producto => ({id:producto.id, ...producto.data()}))))
+  
+    .then(res => {
+      setItems( res.docs.map(producto => ({id:producto.id, ...producto.data()})))
+      setCargando(false)
+    })
     
     
     } 
-    setTimeout(()=>{setCargando(false)},2000)
     
    }, [categoria]
   );
 
   return (
     <>
-    {cargando ? <Loader/>:<ItemList items={items} />}
+    <Suspense fallback={<Loader />}>
+      
+      {cargando ? 
+        <div className="containerPrincipal">
+          <Loader/>
+        </div>
+      :       
+        <div>
+            <div className='tituloWeb'>
+              <h1> Shop de IMake3D Impresiones 3D</h1>
+            </div>
+            <ItemList items={items} />
+      </div>
+      }
+    </Suspense>
+    
     </>
   )
 }  

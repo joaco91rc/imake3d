@@ -1,19 +1,16 @@
 
-import React from 'react';
+import React , {Suspense, lazy} from 'react';
 import './App.css';
 import {BrowserRouter as Router,  Route, Routes} from 'react-router-dom'
-import Navbar from './components/navegacion/Navbar'
 
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-
-import ItemDetailContainer from './components/ItemDeatilContainer/ItemDetailContainer';
-import Provider from './components/Context/CartContext';
-import Cart from './paginas/cart'
-import Footer from './components/Footer/Footer'
 import Loader from './components/Loader/Loader';
 
-
-
+const ItemListContainer = lazy(() => import ('./components/ItemListContainer/ItemListContainer'))
+const ItemDetailContainer = lazy(() => import ('./components/ItemDeatilContainer/ItemDetailContainer'))
+const Provider = lazy(() => import ('./components/Context/CartContext'))
+const Cart = lazy(() => import ('./paginas/cart'))
+const Footer = lazy(() => import ('./components/Footer/Footer'))
+const Navbar = lazy(() => import ('./components/navegacion/Navbar'))
 
 const styles ={
   carrito: {
@@ -32,23 +29,19 @@ function App() {
   return (
    <>
     <Provider>
-    <Router>
-      
-    <Navbar style={styles.carrito}/>
-     <div className='tituloWeb'>
-     <h1> Shop de IMake3D Impresiones 3D</h1>
-     </div>
-     
-    <Routes>
-    <Route path='/' element={<ItemListContainer/>}/>
-    <Route path='/categorias/:categoria' element={<ItemListContainer/>}/>
-    <Route path='/item/:id' element={<ItemDetailContainer/>}/>
-    <Route path="/cart" element={<Cart />} />
-    
-    </Routes>
-    <Footer/>
-    </Router>
-    
+    <Suspense fallback={<Loader />}>
+      <Router>
+        <Navbar style={styles.carrito}/>
+        <Routes>
+        <Route path='/' element={<ItemListContainer/>}/>
+        <Route path='/categorias/:categoria' element={<ItemListContainer/>}/>
+        <Route path='/item/:id' element={<ItemDetailContainer/>}/>
+        <Route path="/cart" element={<Cart />} />
+        
+        </Routes>
+        <Footer/>
+      </Router>
+    </Suspense>
      
     </Provider>
     

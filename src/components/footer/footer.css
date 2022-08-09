@@ -5,7 +5,7 @@
     border: 2px solid goldenrod;
     display: grid;
     grid-template-columns: 20% 50% 10% 10% 10%;
-    height: 100px
+    height: 100px;
 }
 
 .textoFooter {

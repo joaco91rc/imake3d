@@ -5,7 +5,10 @@ import "./Loader.css";
 const Loader = () => {
   return (
     <>
-    <div class="lds-heart"><div></div></div>
+    <div className='containerLoader'>
+      <div className="lds-heart"><div>
+      </div></div>
+    </div>
     </>
   );
 };

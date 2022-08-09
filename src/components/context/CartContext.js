@@ -56,7 +56,40 @@ const vaciarCarrito = () => {
     
 };
 
-    return(<CartContext.Provider value={{cart, addToCart, borrarUnItem,vaciarCarrito,suma}}>
+
+
+
+/* datos de formulario */
+
+const [nombre,setNombre] = useState('')
+const [apellido,setApellido] = useState('')
+const [email,setEmail] = useState('')
+const [telefono,setTelefono] = useState('')
+const [localidad,setLocalidad] = useState('')
+const [direccion,setDireccion] = useState('')
+const [codigoPostal,setCodigoPostal] = useState('')
+
+    return(<CartContext.Provider value={{
+            cart, 
+            addToCart, 
+            borrarUnItem,
+            vaciarCarrito,
+            suma, 
+            nombre,
+            setNombre,
+            apellido,
+            setApellido,
+            email,
+            setEmail,
+            telefono,
+            setTelefono,
+            localidad,
+            setDireccion,
+            direccion,
+            setLocalidad,
+            codigoPostal,
+            setCodigoPostal
+        }}>
         {props.children}
         </CartContext.Provider>)
 }

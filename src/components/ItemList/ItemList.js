@@ -1,14 +1,18 @@
-import React from 'react';
-import Item from '../Item/Item'
+import React, { Suspense, lazy} from 'react';
 import './itemList.css'
+import Loader from '../Loader/Loader';
 
+const Item = lazy(() => import ('../Item/Item'))
 
 const ItemList = ({items}) => {
 
    return (
-      <div className="itemList">
-      {items.map(item => <Item key={item.id} {...item}/>)}
-  </div>
+      <Suspense fallback={<Loader />}> 
+         <div className="itemList">
+                  {items.map(item => <Suspense fallback={<Loader />}>  <Item key={item.id} {...item}/>   </Suspense>)}
+         </div>
+      </Suspense>
+
 )
 }
 
