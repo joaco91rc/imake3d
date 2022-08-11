@@ -12,6 +12,7 @@ const Cart = lazy(() => import ('./paginas/cart'))
 const Footer = lazy(() => import ('./components/Footer/Footer'))
 const Navbar = lazy(() => import ('./components/navegacion/Navbar'))
 
+
 const styles ={
   carrito: {
     display:'flex',
@@ -32,6 +33,16 @@ function App() {
     <Suspense fallback={<Loader />}>
       <Router>
         <Navbar style={styles.carrito}/>
+        <div id='stars'></div>
+            <div id='stars2'></div>
+            <div id='stars3'></div>
+            
+
+            <div id='title'>
+              
+        </div>
+
+
         <Routes>
         <Route path='/' element={<ItemListContainer/>}/>
         <Route path='/categorias/:categoria' element={<ItemListContainer/>}/>
@@ -41,6 +52,9 @@ function App() {
         </Routes>
         <Footer/>
       </Router>
+     
+
+
     </Suspense>
      
     </Provider>

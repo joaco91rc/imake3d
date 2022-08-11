@@ -130,7 +130,7 @@ const Formulario = () => {
                 <input 
                 type ="text"
                 name="direccion"
-                placeholder="Escribe Direccion de Envio"
+                placeholder="Direccion de Envio"
                 value={form.name} 
                 onBlur={handleBlur}
                 onChange={ev =>contextForm.setDireccion(ev.target.value) }
@@ -142,7 +142,7 @@ const Formulario = () => {
                 <input 
                 type ="text"
                 name="codigoPostal"
-                placeholder="Numero Codigo Postal de tu localidad"
+                placeholder="Codigo Postal "
                 value={form.name} 
                 onBlur={handleBlur}
                 onChange={ev =>contextForm.setCodigoPostal(ev.target.value) }
