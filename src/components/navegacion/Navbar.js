@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
-
+import icono3D from'./impresion3D.webp'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './navbar.css'
@@ -12,8 +12,12 @@ import './navbar.css'
 const navbar = () => {
   return (
     <div >
-        <nav  className="navbar navbar-expand-lg navbar-dark bg-dark">
+      {/* <div className='logo'>
+      <img src={icono3D}   alt='icon3D'></img>
+      </div> */}
+        <nav  className="navbar navbar-expand-lg navbar-dark">
   <div className="container-fluid" >
+    
     <NavLink to='/'>
        <div className='logo'>
         <img src='./logoNavbar.png' width='60' alt='logo' />
@@ -26,6 +30,7 @@ const navbar = () => {
     </button>
     
     <div  className="collapse navbar-collapse" id="navbarNav">
+      
       <ul className="navbar-nav mx-auto" >
         <li className="nav-item">
           <Link className="nav-link " to='/'>Inicio</Link>
@@ -50,12 +55,16 @@ const navbar = () => {
         
         
       </ul>
-     
+      
     </div>
     <CartWidget  className='widget' />
+    
   </div>
   
 </nav>
+<div className='imagenNavbar'>
+    
+</div>
 
     </div>
   )

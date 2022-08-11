@@ -117,6 +117,7 @@ const Formulario = () => {
                 <label htmlFor="localidad"> Localidad</label>
                 <input 
                 type ="text"
+                placeholder="Localidad"
                 name="localidad"
                 value={form.name} 
                 onBlur={handleBlur}
