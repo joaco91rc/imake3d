@@ -44,7 +44,8 @@ const ItemListContainer=() =>{
     else {
       getDocs(queryCollection)
   
-    .then(res => {
+    
+      .then(res => {
       setItems( res.docs.map(producto => ({id:producto.id, ...producto.data()})))
       setCargando(false)
     })
