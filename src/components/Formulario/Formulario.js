@@ -1,7 +1,7 @@
 import React, { useState , useContext} from "react";
 import { useForm } from "../../hooks/useForm";
 import './Formulario.css'
-import { CartContext } from "../Context/CartContext";
+import { CartContext } from "../context/CartContext";
 
 const Formulario = () => {
 

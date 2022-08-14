@@ -5,7 +5,7 @@ import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 import { useState, useContext, lazy, Suspense } from "react";
 import {Link} from 'react-router-dom'
-import { CartContext } from "../Context/CartContext";
+import { CartContext } from "../context/CartContext";
 import Loader from "../Loader/Loader";
 
 const ItemCount = lazy(() => import ('../ItemCount/ItemCount'))

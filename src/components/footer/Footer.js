@@ -6,7 +6,7 @@ import iconoWSP from './iconos/iconoWSP.png'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import './Footer.css'
+import './footer.css'
 
 
 const Footer = () => {

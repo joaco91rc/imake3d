@@ -7,9 +7,9 @@ import Loader from './components/Loader/Loader';
 
 const ItemListContainer = lazy(() => import ('./components/ItemListContainer/ItemListContainer'))
 const ItemDetailContainer = lazy(() => import ('./components/ItemDeatilContainer/ItemDetailContainer'))
-const Provider = lazy(() => import ('./components/Context/CartContext'))
+const Provider = lazy(() => import ('./components/context/CartContext'))
 const Cart = lazy(() => import ('./paginas/cart'))
-const Footer = lazy(() => import ('./components/Footer/Footer'))
+const Footer = lazy(() => import ('./components/footer/Footer'))
 const Navbar = lazy(() => import ('./components/navegacion/Navbar'))
 
 
