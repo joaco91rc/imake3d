@@ -72,7 +72,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Simulation of the Purchase Process in an e-commerce web application
 
 This link shows us how to simulate the process of a purchase in our E-commerce Web application  https://media.giphy.com/media/qrRJbCid2bJv5d31Sy/giphy.gif 
-file:///home/joaco/Descargas/Gif%20E%20Comerce.gif
+<p><img align="left" src="https://media.giphy.com/media/qrRJbCid2bJv5d31Sy/giphy.gif" width="500" height="320" /></p>
 
 
 ### Demo Web E-Commerce
