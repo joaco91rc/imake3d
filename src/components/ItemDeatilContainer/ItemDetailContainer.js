@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import Loader from "../Loader/Loader"
 
 import * as React from 'react';
-import { getFirestore, doc, getDoc, getDocs, collection, snapshotEqual } from "firebase/firestore";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 import '../Loader/Loader.css'
 
 const ItemDetail = lazy(() => import ('../ItemDetail/ItemDetail'))
@@ -27,15 +27,14 @@ const ItemDetailContainer = () => {
       getDoc(queryDoc)
       .then(res => setItem({id:res.id, ...res.data()}))
       setCargando(false)
-      //lazzy
-      //suspense
+      
     
   },[])
 
       return (
       <>
         <Suspense fallback={<Loader /> }>
-            {cargando ? <Loader /> : <ItemDetail item={item} /> }
+            {cargando ? <Loader /> : <ItemDetail key={item.id} item={item} /> }
         </Suspense>
       </>
       

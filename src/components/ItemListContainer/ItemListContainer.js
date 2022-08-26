@@ -14,13 +14,7 @@ const ItemListContainer=() =>{
   const [cargando, setCargando] = useState(true);
   const { categoria } = useParams();
 
-  const traerProductos = async () =>{
-    const db = getFirestore();
-    await getDocs(collection(db,'items')).then((snapshot)=>{
-    const dataExtraida = snapshot.docs.map((datos) => datos.data())
-        setItems(dataExtraida)
-    })
- }
+  
 
 
   useEffect(
@@ -37,21 +31,21 @@ const ItemListContainer=() =>{
     getDocs(queryFilter)
 
     .then(res => {
-      setItems( res.docs.map(producto => ({id:producto.id, ...producto.data()})))
+      setItems( res.docs.map(producto  => ({id:producto.id, ...producto.data()})))
       setCargando(false)
-    })}
-
+    })            }
+    
     else {
       getDocs(queryCollection)
   
     
       .then(res => {
-      setItems( res.docs.map(producto => ({id:producto.id, ...producto.data()})))
+      setItems( res.docs.map(producto => (  { id:producto.id, ...producto.data()})))
       setCargando(false)
     })
     
     
-    } 
+      } 
     
    }, [categoria]
   );
@@ -65,7 +59,7 @@ const ItemListContainer=() =>{
           <Loader/>
         </div>
       :       
-        <div>
+        <div >
             <div className='tituloWeb'>
               <h1> Shop de IMake3D Impresiones 3D</h1>
             </div>

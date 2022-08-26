@@ -1,7 +1,7 @@
 //1 creo el contexto 
 import { createContext, useEffect, useState } from "react";
 import * as React from 'react';
-import { Link } from "react-router-dom";
+
 
 
 export const CartContext = createContext()
@@ -22,14 +22,13 @@ useEffect(()=>{
 },[cart])
 
     const addToCart = (item,cantidad)=>{
-        //console.log(...item , canntidad)
+        
         
         if (ExisteEnCarrito(item.id)) {
             //sumo la cantidad al carrito
             cart.map(product => {
                 if(product.id === item.id){
                     product.cantidad = cantidad +product.cantidad
-                    console.log('cart', cart)
                     setCart(cart)}
                 })
 

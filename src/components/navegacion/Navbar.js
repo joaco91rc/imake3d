@@ -1,7 +1,6 @@
 import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
-import icono3D from'./impresion3D.webp'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './navbar.css'
@@ -12,9 +11,7 @@ import './navbar.css'
 const navbar = () => {
   return (
     <div >
-      {/* <div className='logo'>
-      <img src={icono3D}   alt='icon3D'></img>
-      </div> */}
+     
         <nav  className="navbar navbar-expand-lg navbar-dark">
   <div className="container-fluid" >
     
