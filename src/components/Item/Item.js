@@ -3,7 +3,7 @@ import "./Item.css";
 import { Link } from "react-router-dom";
 import Loader from "../Loader/Loader";
 
-const Item = ({ nombre, categoria, img, precio, id, descripcion }) => {
+const Item = ({ nombre, img, precio, id, descripcion }) => {
   return (
     <Suspense fallback={<Loader />}>
       

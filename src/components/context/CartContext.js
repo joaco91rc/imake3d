@@ -17,7 +17,7 @@ const Provider = (props)=>{
     }
 
 useEffect(()=>{
-    console.log(cart)
+    
     totalCarrito()
 },[cart])
 

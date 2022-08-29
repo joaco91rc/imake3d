@@ -1,4 +1,4 @@
-import React, { useState , useContext} from "react";
+import React, { useContext} from "react";
 import { useForm } from "../../hooks/useForm";
 import './Formulario.css'
 import { CartContext } from "../context/CartContext";
@@ -57,8 +57,7 @@ const Formulario = () => {
   
   
 
-    const {form,errors,loading,response,
-      handleChange,handleBlur,handleSubmit} = useForm(initialForm,validationsForm)
+    const {form,errors,handleBlur,handleSubmit} = useForm(initialForm,validationsForm)
    
   return (
     <div className="container-form">
