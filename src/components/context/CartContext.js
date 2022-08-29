@@ -26,11 +26,11 @@ useEffect(()=>{
         
         if (ExisteEnCarrito(item.id)) {
             //sumo la cantidad al carrito
-            cart.map(product => {
+            cart.forEach((product => {
                 if(product.id === item.id){
                     product.cantidad = cantidad +product.cantidad
                     setCart(cart)}
-                })
+            }))
 
 
         } else {

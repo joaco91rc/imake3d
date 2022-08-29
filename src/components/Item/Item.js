@@ -7,7 +7,7 @@ const Item = ({ nombre, img, precio, id, descripcion }) => {
   return (
     <Suspense fallback={<Loader />}>
       
-      <div class="row">
+      <div className="row">
   
   <div className="example-2 card">
     <div className="wrapper">
@@ -17,16 +17,14 @@ const Item = ({ nombre, img, precio, id, descripcion }) => {
           <img src={img} alt={nombre} className="img-detail" />
         </div>
         <ul className="menu-content">
-          <li>
-            <a href="#" className="fa fa-bookmark-o"></a>
-          </li>
+          
           
         </ul>
       </div>
       <div className="data">
         <div className="content">
           <span className="author">${precio}</span>
-          <h1 className="title"><a href="#">{nombre}</a></h1>
+          <Link to={`/item/${id}`}><h1 className="title">{nombre}</h1></Link>
           <p className="text"> {descripcion && <span>{descripcion}</span>}</p>
           <Link to={`/item/${id}`}>
         <button type="button" className="button">Detalle</button>
