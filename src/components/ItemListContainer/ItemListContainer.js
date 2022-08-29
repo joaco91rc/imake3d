@@ -14,7 +14,12 @@ const ItemListContainer=() =>{
   const [cargando, setCargando] = useState(true);
   const { categoria } = useParams();
 
-  
+  function filtrarData(query){
+    getDocs(query).then(res => {
+      setItems( res.docs.map(producto  => ({id:producto.id, ...producto.data()})))
+      
+    })
+  }
 
 
   useEffect(
@@ -25,27 +30,19 @@ const ItemListContainer=() =>{
 
     const queryCollection = collection(querydb, 'items')
     if (categoria){
-    const queryFilter = query(queryCollection, where('categoria','==', categoria)
-    )
+    const queryFilter = query(queryCollection, where('categoria','==', categoria))
   
-    getDocs(queryFilter)
-
-    .then(res => {
-      setItems( res.docs.map(producto  => ({id:producto.id, ...producto.data()})))
+    filtrarData(queryFilter)
       setCargando(false)
-    })            }
+    }            
     
     else {
-      getDocs(queryCollection)
-  
-    
-      .then(res => {
-      setItems( res.docs.map(producto => (  { id:producto.id, ...producto.data()})))
+       filtrarData(queryCollection)
       setCargando(false)
-    })
+    }
     
     
-      } 
+       
     
    }, [categoria]
   );
